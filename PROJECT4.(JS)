@@ -1,0 +1,27 @@
+const quizQuestions = [
+  { question: "What is the capital of India?", answer: "new delhi" },
+  { question: "Which planet is known as the red planet?", answer: "mars" },
+  { question: "What is 5 - 7?", answer: "-2" },
+  { question: "Who is the president of Russia?", answer: "vladimir putin" },
+  { question: "Which language is used for web development?", answer: "javascript" }
+];
+function runQuiz() {
+  let score = 0; 
+  for (let i = 0; i < quizQuestions.length; i++) {
+    let userAnswer = prompt(quizQuestions[i].question);
+    if (userAnswer === null) {
+      alert("Quiz cancelled");
+      return;
+    }
+    userAnswer = userAnswer.toLowerCase().trim();
+    if (userAnswer === quizQuestions[i].answer) {
+      score++;
+      alert("Correct!");
+    } else {
+      alert("Wrong! Correct answer is: " + quizQuestions[i].answer);
+    }
+  }
+  alert("Quiz Finished!\nYour Score: " + score +
+        " out of " + quizQuestions.length);
+}
+runQuiz();
